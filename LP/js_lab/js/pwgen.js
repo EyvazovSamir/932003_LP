@@ -8,9 +8,8 @@ var nums = "1234567890";
 var punctuation = "!$%&*()-+!?_";
 var both = nums + punctuation;
 var exclude = "";
-//console.log(list);
 
-//generates the password
+
 function genPasswd(length){
 var mychars = document.getElementById("mychars").value;
 var chars = lowercase + uppercase + mychars;
@@ -21,8 +20,6 @@ var always = document.getElementById("always");
 var pass = "";
 if (special.checked){chars += punctuation;};
 if (digits.checked){chars += nums;};
-//if (always.checked){};
-//console.log(chars);	
 var j = Math.floor(Math.random() * both.length);
 var splice = both.charAt(j);
 console.log(splice);
@@ -33,7 +30,6 @@ for (var x = 0; x < length; x++) {
     
     }
     console.log(pass);
-    //here i replace the middle char with a random special character
     pass = pass.replace(pass.charAt(pass.length/2),splice);
     console.log(pass);
     return pass;
@@ -44,7 +40,6 @@ for (var x = 0; x < length; x++) {
 
 function mxPasswd(){
 var check = 0;
-//console.log(list[0]);
 for (var x = 0; x < list.length; x++) {
     var word = list[x];
     
@@ -59,23 +54,17 @@ for (var x = 0; x < list.length; x++) {
         console.log("hit");
         };
         
-        //console.log(both.charAt(z));
         }
         
-        //console.log(hit);
-        //console.log(check);
         }
     
     }
     
     
 }
-//generates a list array from the genPasswd function and prints it to document
-//returns the array list[an array of passwords]
 function genList(){
 
 var amount = document.getElementById("amount").value;
-//amount + counter knows how many times function has run to keep track of passwords and add to the end of the existing list
 amount = parseInt(amount);
 amount = amount + counter;
 for (var y = counter; y < amount; y++){
@@ -89,8 +78,6 @@ return list;
 
 }
 
-//function to write to sessions storage
-//dont need this now, can write to an array in the genList function instead
 function writeStorage(){
 var amount = document.getElementById("amount").value;
 for (var a = 0; a < amount; a++){
@@ -107,12 +94,10 @@ text += " " + list[i] + " ";
 return text;
 }
 
-//my reset clear function
 function crList(){
 document.getElementById("length").value = 8;
 document.getElementById("passwd").innerHTML = "";
 counter = 0;
-//backwards loop to clear array
 for (var z = list.length -1; z >= 0; --z){
 list.pop();
 console.log(list);
@@ -122,7 +107,6 @@ console.log(list);
 
 function genChars(e){
 console.log(e);
-//chars += this;
 
 
 
@@ -131,10 +115,7 @@ console.log(e);
 function saveTextAsFile()
 {
 var textToWrite = "";
-//var textToWrite = document.getElementById("passwd").innerHTML;
 
-//if list is empty run genlist
-//else loop through list and write that text
 if (list.length == 0){
 console.log("empty");
 textToWrite = genList();
@@ -149,14 +130,10 @@ downloadLink.download = fileNameToSaveAs;
 downloadLink.innerHTML = "Download File";
 if (window.URL != null)
 {
-// Chrome allows the link to be clicked
-// without actually adding it to the DOM.
 downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
 }
 else
 {
-// Firefox requires the link to be added to the DOM
-// before it can be clicked.
 downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
 downloadLink.onclick = destroyClickedElement;
 downloadLink.style.display = "none";
