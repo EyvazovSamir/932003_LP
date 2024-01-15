@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Password Generator</title>
+  </head>
+  <body>
+<h2 class="name">Password Generator</h2>
+<div class ="wrapper">
+<div>		
+Password length:
+<input type="number" id="length" value = "8"></input>
+</div>
+
+<div class="checkbox">
+    <label><input type="checkbox" id ="digits"> Use Digits </label>
+  </div>
+  
+ <div class="checkbox">
+    <label><input type="checkbox" id ="special"> Use Special Characters? </label>
+  </div>
+  
+<div>
+  Use these characters: <input type="text" id="mychars"><br>
+</div>
+
+ <div class="checkbox">
+    <label><input type="checkbox" id ="always"> Always use</label>
+  </div>
+  
+<div>
+How many passwords you need?<input type="number" id="amount" value = "1"></input>
+</div>
+<div>
+	<button id ="gen">Generate</button>	
+</div>
+
+<div>
+	<button id ="clr">Clear</button><br>
+</div>
+
+<div>
+	Filename: <input type="text" id="inputFileNameToSaveAs" value="passwords"><br>
+		
+</div>
+
+<div>
+	<button id ="sav">Save</button>
+	
+</div>
+
+<div>
+	<button id ="ver">Verify</button>
+	
+</div>
+
+
+<textarea class="textbox" id="passwd" cols="50" rows="10">
+
+</textarea>
+</div>
+<script src="js/pwgen.js"></script> 
+
+  </body>
+</html>

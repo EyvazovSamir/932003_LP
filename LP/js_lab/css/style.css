@@ -1,0 +1,27 @@
+.name {
+	font-family: Monospace;
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	}
+
+.wrapper {
+	margin: auto;
+    width: 50%;
+    border: 3px solid #fe4a49;
+	border-radius: 10px;
+	background-color: #f4f4f8;
+    padding: 10px;
+	font-family: Monospace;
+	}
+	
+.textbox {
+	border-radius: 10px;
+	margin: auto;
+    width: 50%;
+	background-color: black;
+	color: white;
+	}
+button {
+	font-family: Monospace;
+	}
